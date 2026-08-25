@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#020607" />
+  <meta name="description" content="Minijuegos SØD — experiencias arcade del universo SØD." />
+  <title>Minijuegos SØD</title>
+  <link rel="icon" href="/public/assets/player.png" />
+  <link rel="preload" as="image" href="/public/assets/player.png" />
+  <link rel="preload" as="image" href="/public/assets/semilla.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="world" aria-hidden="true">
+    <div class="world-glow glow-a"></div>
+    <div class="world-glow glow-b"></div>
+    <div class="world-grid"></div>
+    <div class="world-stars"></div>
+    <div class="world-vignette"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="https://sod-v3.vercel.app/semillas" aria-label="Volver a SØD Ecosystem">
+      <span class="brand-mark"><img src="/public/assets/player.png" alt="" /></span>
+      <span class="brand-type"><strong>SØD</strong><small>MINIJUEGOS</small></span>
+    </a>
+
+    <nav class="topnav" aria-label="Navegación principal">
+      <a href="#juegos">JUEGOS</a>
+      <a href="#archivo">ARCHIVO</a>
+    </nav>
+
+    <a class="ecosystem-link" href="https://sod-v3.vercel.app/semillas">
+      <span>ECOSYSTEM</span><b>↗</b>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="system-tag"><i></i> SØD PLAY SYSTEM / ONLINE</div>
+        <h1 id="heroTitle">JUGÁ.<br><span>DOMINÁ EL SISTEMA.</span></h1>
+        <p>No son ejercicios disfrazados. Son videojuegos rápidos, precisos y rejugables construidos dentro del universo SØD.</p>
+
+        <div class="hero-actions">
+          <button class="primary-cta" id="playFeatured" type="button">
+            <span class="cta-icon">▶</span>
+            <span><b>JUGAR AHORA</b><small id="featuredCtaName">SØD Runner</small></span>
+          </button>
+          <a class="secondary-cta" href="#juegos">EXPLORAR JUEGOS ↓</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Estado del portal">
+          <div><b id="activeCount">02</b><span>JUEGOS ACTIVOS</span></div>
+          <div><b id="runnerBest">00000</b><span>MEJOR RUNNER</span></div>
+          <div><b id="mazeBest">00000</b><span>MEJOR MAZE</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="heroStage" aria-label="Juego destacado">
+        <div class="stage-chrome">
+          <span>FEATURED / <b id="featuredFamily">FLOW</b></span>
+          <span class="live-chip"><i></i> READY</span>
+        </div>
+        <button class="featured-preview" id="featuredPreview" type="button" aria-label="Jugar juego destacado">
+          <div class="preview-depth preview-depth-a"></div>
+          <div class="preview-depth preview-depth-b"></div>
+          <div class="preview-runway"></div>
+          <img class="preview-player" src="/public/assets/player.png" alt="" />
+          <img class="preview-danger" src="/public/assets/obstacle-miedo.png" alt="" />
+          <img class="preview-seed" src="/public/assets/semilla.png" alt="" />
+          <span class="play-orbit"><b>▶</b><em>PLAY</em></span>
+        </button>
+        <div class="featured-caption">
+          <div>
+            <span id="featuredEyebrow">FLOW · REFLEJOS · PRECISIÓN</span>
+            <strong id="featuredName">SØD Runner</strong>
+          </div>
+          <p id="featuredDescription">Dominá la altura y atravesá la interferencia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifest" aria-label="Principios del portal">
+      <span>FUN FIRST</span><i></i><span>LOW LATENCY</span><i></i><span>SKILL EXPRESSION</span><i></i><span>MOBILE READY</span><i></i><span>ONE MORE TRY</span>
+    </section>
+
+    <section class="games-section" id="juegos" aria-labelledby="gamesTitle">
+      <div class="section-head">
+        <div>
+          <span class="kicker">CATÁLOGO ACTIVO</span>
+          <h2 id="gamesTitle">Elegí una experiencia.</h2>
+        </div>
+        <div class="section-note"><i></i> CADA JUEGO CARGA DE FORMA INDEPENDIENTE</div>
+      </div>
+
+      <div class="game-grid" id="gameGrid"></div>
+    </section>
+
+    <section class="archive" id="archivo" aria-labelledby="archiveTitle">
+      <div class="archive-copy">
+        <span class="kicker">SØD GAME ARCHIVE</span>
+        <h2 id="archiveTitle">El catálogo recién empieza.</h2>
+        <p>Cada próximo juego deberá aportar una emoción o habilidad distinta. No vamos a llenar el portal de clones.</p>
+      </div>
+      <div class="future-grid" id="futureGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><img src="/public/assets/player.png" alt="" /><span>SØD MINIJUEGOS</span></div>
+    <span>PLAYABLE SYSTEMS / BUILD 01</span>
+    <a href="https://sod-v3.vercel.app/semillas">VOLVER A SØD ↗</a>
+  </footer>
+
+  <div class="game-shell" id="gameShell" aria-hidden="true">
+    <header class="game-shell-bar">
+      <button class="shell-icon" id="closeGame" type="button" aria-label="Cerrar juego">←</button>
+      <div class="shell-id">
+        <span id="shellFamily">FLOW</span>
+        <strong id="shellName">SØD Runner</strong>
+      </div>
+      <div class="shell-controls">
+        <button id="reloadGame" type="button">REINICIAR</button>
+        <button id="fullscreenGame" type="button">PANTALLA COMPLETA</button>
+      </div>
+    </header>
+    <div class="game-viewport">
+      <div class="frame-loader" id="frameLoader">
+        <div class="loader-sigil"><img src="/public/assets/player.png" alt="" /></div>
+        <span>CARGANDO EXPERIENCIA</span>
+      </div>
+      <iframe id="gameFrame" title="Minijuego SØD" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script type="module" src="/portal.js"></script>
+</body>
+</html>
