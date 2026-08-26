@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#03070b" />
+  <meta name="description" content="SØD Minijuegos — arcade de precisión, flow y estrategia." />
+  <title>SØD Minijuegos — Entrá al juego</title>
+  <link rel="icon" href="/public/assets/player.png" />
+  <link rel="preload" as="image" href="/public/assets/v3/runner-key-art.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="portal-bg" aria-hidden="true"></div>
+  <aside class="rail" aria-label="Navegación principal">
+    <a class="rail-brand" href="#inicio" aria-label="SØD Minijuegos"><span>Ø</span><small>PLAY</small></a>
+    <nav><a href="#inicio" class="is-active"><b>01</b><span>Inicio</span></a><a href="#juegos"><b>02</b><span>Juegos</span></a><a href="#proximos"><b>03</b><span>Próximos</span></a></nav>
+    <a class="rail-exit" href="https://sod-v3.vercel.app/semillas" aria-label="Volver al ecosistema SØD">↗</a>
+  </aside>
+  <header class="mobile-bar"><a href="#inicio"><strong>SØD</strong><span>MINIJUEGOS</span></a><a href="#juegos">JUEGOS</a></header>
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-art" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy"><span class="eyebrow"><i></i> JUEGO DESTACADO</span><p class="family">FLOW / 01</p><h1 id="heroTitle">SØD<br><em>RUNNER</em></h1><p class="hero-lead">Atravesá la interferencia. Dominá la altura. No pierdas el pulso.</p><div class="hero-actions"><button class="play-main" id="playFeatured" type="button"><span>▶</span> JUGAR AHORA</button><a href="#juegos">VER CATÁLOGO</a></div><div class="hero-meta"><span>REFLEJOS</span><span>FLOW</span><span>30s—3m</span></div></div>
+      <button class="hero-play" id="featuredPreview" type="button" aria-label="Jugar SØD Runner"><span>▶</span><small>PLAY</small></button><div class="scroll-cue" aria-hidden="true"><span></span> DESCUBRÍ MÁS</div>
+    </section>
+    <section class="active" id="juegos" aria-labelledby="gamesTitle"><header class="section-head"><div><span class="eyebrow"><i></i> DISPONIBLES AHORA</span><h2 id="gamesTitle">Juegos activos</h2></div><p><strong id="activeCount">02</strong> experiencias jugables</p></header><div class="game-grid" id="gameGrid"></div></section>
+    <section class="upcoming" id="proximos" aria-labelledby="upcomingTitle"><header class="section-head"><div><span class="eyebrow"><i></i> EL ARCHIVO SE EXPANDE</span><h2 id="upcomingTitle">Próximos desafíos</h2></div><p>Nuevas formas de jugar. El mismo pulso.</p></header><div class="future-grid" id="futureGrid"></div></section>
+    <footer><span><b>SØD</b> MINIJUEGOS</span><p>PLAY. MASTER. REPEAT.</p><a href="https://sod-v3.vercel.app/semillas">VOLVER A SØD ↗</a></footer>
+  </main>
+  <div class="game-shell" id="gameShell" aria-hidden="true" role="dialog" aria-modal="true"><header><button id="closeGame" type="button" aria-label="Volver al portal">← <span>VOLVER</span></button><div><small id="shellFamily">FLOW</small><strong id="shellName">SØD Runner</strong></div><nav><button id="reloadGame" type="button">↻ <span>REINICIAR</span></button><button id="fullscreenGame" type="button">⛶ <span>PANTALLA COMPLETA</span></button></nav></header><div class="game-viewport"><div class="frame-loader" id="frameLoader"><img src="/public/assets/player.png" alt="" /><span>ENTRANDO AL JUEGO</span></div><iframe id="gameFrame" title="Minijuego SØD" allow="autoplay; fullscreen" allowfullscreen></iframe></div></div>
+  <script type="module" src="/portal.js"></script>
+</body></html>

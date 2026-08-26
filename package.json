@@ -1,0 +1,13 @@
+{
+  "name": "sod-minijuegos-prime",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minijuegos SØD PRIME — portal arcade web extensible del universo SØD",
+  "scripts": {
+    "check": "node --check portal.js && node --check catalog.js && node --check build.mjs && node --check tests.mjs && node --check games/runner/game.js && node --check games/maze/game.js",
+    "test": "node tests.mjs",
+    "build": "node build.mjs",
+    "verify": "npm run check && npm test && npm run build"
+  }
+}
